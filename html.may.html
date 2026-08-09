@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Unit Converter</title>
+</head>
+
+<body>
+
+    <h1>Unit Converter</h1>
+
+    <hr>
+
+    <h2>Length Converter</h2>
+    <p>Convert Meter to Kilometer</p>
+
+    <input type="number" id="meter" placeholder="Enter meter">
+    <button onclick="convertLength()">Convert</button>
+    <p id="lengthResult"></p>
+
+    <hr>
+
+    <h2>Height Converter</h2>
+    <p>Convert Centimeter to Meter</p>
+
+    <input type="number" id="centimeter" placeholder="Enter centimeter">
+    <button onclick="convertHeight()">Convert</button>
+    <p id="heightResult"></p>
+
+    <hr>
+
+    <h2>Temperature Converter</h2>
+    <p>Convert Celsius to Fahrenheit</p>
+
+    <input type="number" id="celsius" placeholder="Enter celsius">
+    <button onclick="convertTemperature()">Convert</button>
+    <p id="temperatureResult"></p>
+
+    <hr>
+
+    <h2>Area Converter</h2>
+    <p>Convert Square Meter to Square Feet</p>
+
+    <input type="number" id="squareMeter" placeholder="Enter square meter">
+    <button onclick="convertArea()">Convert</button>
+    <p id="areaResult"></p>
+
+    <script>
+
+        function convertLength() {
+            let meter = document.getElementById("meter").value;
+            let kilometer = meter / 1000;
+
+            document.getElementById("lengthResult").innerHTML =
+                meter + " Meter = " + kilometer + " Kilometer";
+        }
+
+        function convertHeight() {
+            let centimeter = document.getElementById("centimeter").value;
+            let meter = centimeter / 100;
+
+            document.getElementById("heightResult").innerHTML =
+                centimeter + " Centimeter = " + meter + " Meter";
+        }
+
+        function convertTemperature() {
+            let celsius = document.getElementById("celsius").value;
+            let fahrenheit = (Number(celsius) * 9 / 5) + 32;
+
+            document.getElementById("temperatureResult").innerHTML =
+                celsius + " °C = " + fahrenheit.toFixed(2) + " °F";
+        }
+
+        function convertArea() {
+            let squareMeter = document.getElementById("squareMeter").value;
+            let squareFeet = squareMeter * 10.764;
+
+            document.getElementById("areaResult").innerHTML =
+                squareMeter + " Square Meter = " + squareFeet.toFixed(2) + " Square Feet";
+        }
+
+    </script>
+
+</body>
+
+</html>
